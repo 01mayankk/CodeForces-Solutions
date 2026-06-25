@@ -1,0 +1,77 @@
+# 1676E - Eating Queries
+
+## Problem Statement
+
+You are given `n` candies, where each candy contains a certain amount of sugar.
+
+For every query, you are given an integer `x` representing the minimum amount of sugar you want to obtain. Your task is to determine the smallest number of candies that must be eaten so that the total sugar consumed is at least `x`.
+
+You may choose the candies in any order. Since each candy can be eaten at most once, you should select the candies in the most optimal way.
+
+If it is impossible to obtain at least `x` units of sugar using all available candies, output `-1`.
+
+---
+
+## Input Format
+
+* The first line contains an integer `t` — the number of test cases.
+* For each test case:
+
+  * The first line contains two integers `n` and `q`:
+
+    * `n` — the number of candies.
+    * `q` — the number of queries.
+  * The second line contains `n` integers representing the sugar content of each candy.
+  * The next `q` lines each contain a single integer `x`, representing the required minimum amount of sugar.
+
+---
+
+## Output Format
+
+For each query, print:
+
+* The minimum number of candies required to collect at least `x` units of sugar.
+* Print `-1` if the required amount cannot be achieved.
+
+---
+
+## Example
+
+### Input
+
+```
+1
+5 3
+4 2 1 10 5
+5
+13
+25
+```
+
+### Output
+
+```
+1
+2
+-1
+```
+
+---
+
+## Explanation
+
+The candies can be rearranged in descending order of sugar content:
+
+```
+10, 5, 4, 2, 1
+```
+
+Their prefix sums become:
+
+```
+10, 15, 19, 21, 22
+```
+
+* For `x = 5`, eating the first candy is sufficient.
+* For `x = 13`, the first two candies provide `15` units of sugar.
+* For `x = 25`, even all candies together provide only `22` units of sugar, so the answer is `-1`.
