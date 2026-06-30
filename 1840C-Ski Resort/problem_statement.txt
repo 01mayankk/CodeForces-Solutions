@@ -1,0 +1,86 @@
+# 1840C - Ski Resort
+
+## Problem Statement
+
+You are given the weather forecast for `n` consecutive days, where the temperature for each day is known.
+
+You want to plan a ski trip that lasts for **at least `k` consecutive days**. A trip is considered valid only if the temperature on **every day of the trip** is **less than or equal to `q`**.
+
+Determine the total number of different valid trips that can be planned.
+
+A trip is defined by selecting a contiguous sequence of days that satisfies the above conditions.
+
+---
+
+## Input Format
+
+* The first line contains an integer `t` — the number of test cases.
+* For each test case:
+
+  * The first line contains three integers:
+
+    * `n` — the number of days.
+    * `k` — the minimum required length of a ski trip.
+    * `q` — the maximum allowed temperature.
+  * The second line contains `n` integers representing the temperature on each day.
+
+---
+
+## Output Format
+
+For each test case, output a single integer:
+
+* The total number of contiguous trips whose length is **at least `k`** and whose temperatures are all **less than or equal to `q`**.
+
+---
+
+## Example
+
+### Input
+
+```text
+2
+7 2 5
+4 3 6 2 5 1 4
+5 3 2
+1 2 3 2 1
+```
+
+### Output
+
+```text
+7
+0
+```
+
+---
+
+## Explanation
+
+### Test Case 1
+
+The temperatures form two valid segments where every day's temperature is at most `5`:
+
+```text
+[4, 3]
+[2, 5, 1, 4]
+```
+
+* The first segment has length `2`, contributing **1** valid trip.
+* The second segment has length `4`, contributing **6** valid trips of length at least `2`.
+
+Total valid trips:
+
+```text
+1 + 6 = 7
+```
+
+### Test Case 2
+
+There is no contiguous segment of at least `3` days where every temperature is less than or equal to `2`.
+
+Therefore, the answer is:
+
+```text
+0
+```
