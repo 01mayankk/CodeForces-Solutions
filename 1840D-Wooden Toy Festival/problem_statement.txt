@@ -1,0 +1,85 @@
+# 1840D - Wooden Toy Festival
+
+## Problem Statement
+
+There are `n` wooden toys placed along a straight line, where the position of each toy is given.
+
+You need to organize the toys into **at most three groups**. Each group has a center, and every toy assigned to that group must be within the same maximum distance from its center.
+
+Your objective is to minimize this maximum distance.
+
+Determine the smallest possible value of the maximum distance such that all toys can be assigned to no more than three groups.
+
+---
+
+## Input Format
+
+* The first line contains an integer `t` — the number of test cases.
+* For each test case:
+
+  * The first line contains an integer `n` — the number of toys.
+  * The second line contains `n` integers representing the positions of the toys.
+
+---
+
+## Output Format
+
+For each test case, output a single integer:
+
+* The minimum possible maximum distance from any toy to the center of its assigned group when using at most three groups.
+
+---
+
+## Example
+
+### Input
+
+```text
+2
+5
+1 2 4 8 10
+4
+1 3 7 9
+```
+
+### Output
+
+```text
+1
+1
+```
+
+---
+
+## Explanation
+
+### Test Case 1
+
+The toys can be divided into the following groups:
+
+* Group 1: `1, 2`
+* Group 2: `4`
+* Group 3: `8, 10`
+
+Each group can choose an appropriate center so that every toy is at most **1 unit** away from its center.
+
+Therefore, the minimum possible maximum distance is:
+
+```text
+1
+```
+
+### Test Case 2
+
+One possible grouping is:
+
+* Group 1: `1, 3`
+* Group 2: `7, 9`
+
+Only two groups are needed, and every toy is within **1 unit** of its group's center.
+
+Hence, the answer is:
+
+```text
+1
+```
